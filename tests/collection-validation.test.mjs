@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { validateCollection, imageUrl } from '../src/lib/collection-schema.ts';
+const valid = { title:'A night to remember', category:'Events', summary:'Celebrating together', story:'The story.', coverUrl:'https://example.com/cover.jpg', date:'2026-10-10', location:'Yaounde', published:false, order:1, photos:[{id:'one',url:'https://example.com/photo.jpg',alt:'A celebration',title:'Opening',description:'The first moment.'}] };
+test('preserves story, draft status and slide order', () => { const value=validateCollection(valid);assert.equal(value.published,false);assert.equal(value.story,valid.story);assert.equal(value.photos[0].description,'The first moment.'); });
+test('rejects active or unsafe URL schemes', () => { for(const url of ['javascript:alert(1)','data:image/svg+xml,anything','http://example.com/photo.jpg','//evil.example/photo','/photos/../secret']) assert.throws(()=>imageUrl(url)); });
+test('allows local portfolio photos and HTTPS URL parameters', () => { assert.equal(imageUrl('/photos/mic16_1.jpg'),'/photos/mic16_1.jpg');assert.match(imageUrl('https://example.com/p.jpg?token=abc'),/token=abc/); });
+test('rejects empty photos, missing alt text, duplicate IDs and impossible dates', () => { assert.throws(()=>validateCollection({...valid,photos:[]}));assert.throws(()=>validateCollection({...valid,photos:[{...valid.photos[0],alt:''}]}));assert.throws(()=>validateCollection({...valid,photos:[valid.photos[0],valid.photos[0]]}));assert.throws(()=>validateCollection({...valid,date:'2026-02-31'})); });
+test('rejects string booleans, unbounded stories and invalid ordering',()=>{assert.throws(()=>validateCollection({...valid,published:'true'}));assert.throws(()=>validateCollection({...valid,story:'a'.repeat(16001)}));assert.throws(()=>validateCollection({...valid,order:-1}));});

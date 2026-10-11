@@ -1,0 +1,379 @@
+[
+  {
+    "id": "mic-monsta",
+    "title": "Mic Monsta: presence in the frame",
+    "category": "Artists & culture",
+    "summary": "A portrait of the Cameroonian artist, photographed by Chap Nic Pictures.",
+    "story": "A simple backdrop. A direct gaze. A portrait with a presence of its own.\n\nMic Monsta, photographed by Chap Nic Pictures. Explore the frame, then return to discover more stories from the studio.",
+    "coverUrl": "/photos/mic16_1.jpg",
+    "date": "",
+    "location": "",
+    "published": true,
+    "order": 0,
+    "updatedAt": "2026-10-10T16:06:44.676Z",
+    "photos": [
+      {
+        "id": "mic16-1",
+        "url": "/photos/mic16_1.jpg",
+        "alt": "Mic Monsta posing against a white backdrop",
+        "title": "Mic Monsta",
+        "description": "A portrait of the Cameroonian artist by Chap Nic Pictures."
+      }
+    ]
+  },
+  {
+    "id": "weddings",
+    "title": "Wedding stories",
+    "category": "Weddings",
+    "summary": "The anticipation, the quiet looks, and the joy that refuses to stay still.",
+    "story": "The anticipation, the quiet looks, and the joy that refuses to stay still.",
+    "coverUrl": "/photos/weddings-01.jpg",
+    "date": "",
+    "location": "",
+    "published": true,
+    "order": 10,
+    "updatedAt": "2026-10-10T16:06:44.674Z",
+    "photos": [
+      {
+        "id": "weddings-0",
+        "url": "/photos/weddings-01.jpg",
+        "alt": "A couple in dark blue and silver wedding attire sharing a smile outdoors - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "weddings-1",
+        "url": "/photos/weddings-02.jpg",
+        "alt": "A wedding couple standing together in front of an ornate entrance - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "weddings-2",
+        "url": "/photos/weddings-03.jpg",
+        "alt": "A couple beneath an entrance framed by palm trees - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "weddings-3",
+        "url": "/photos/weddings-04.jpg",
+        "alt": "A full-length wedding portrait on a palm-lined driveway - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "weddings-4",
+        "url": "/photos/weddings-05.jpg",
+        "alt": "A wedding couple posing closely together in coordinated formal attire - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "weddings-5",
+        "url": "/photos/weddings-06.jpg",
+        "alt": "A wedding party dressed in white outside a grand entrance - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "weddings-6",
+        "url": "/photos/weddings-07.jpg",
+        "alt": "A woman in an elegant black dress and wide-brimmed hat - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "weddings-7",
+        "url": "/photos/weddings-08.jpg",
+        "alt": "A group wedding portrait in coordinated blue, black, and floral outfits - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": "portraits",
+    "title": "Come as you are",
+    "category": "Portraits",
+    "summary": "A collection of portraits, each with a presence of its own.",
+    "story": "A collection of portraits, each with a presence of its own.",
+    "coverUrl": "/photos/portraits-01.jpg",
+    "date": "",
+    "location": "",
+    "published": true,
+    "order": 20,
+    "updatedAt": "2026-10-10T16:06:44.676Z",
+    "photos": [
+      {
+        "id": "portraits-0",
+        "url": "/photos/portraits-01.jpg",
+        "alt": "A maternity portrait in a flowing ivory dress against a dark studio backdrop - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "portraits-1",
+        "url": "/photos/portraits-02.jpg",
+        "alt": "An expressive seated maternity portrait with one arm raised - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "portraits-2",
+        "url": "/photos/portraits-03.jpg",
+        "alt": "A woman in a vibrant green patterned outfit holding a drink - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "portraits-3",
+        "url": "/photos/portraits-04.jpg",
+        "alt": "A studio portrait in a blue patterned dress and matching headwrap - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "portraits-4",
+        "url": "/photos/portraits-05.jpg",
+        "alt": "A woman in a white outfit standing beside a floral arrangement - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "portraits-5",
+        "url": "/photos/portraits-06.jpg",
+        "alt": "A seated portrait in white against a warm wooden backdrop - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "portraits-6",
+        "url": "/photos/portraits-07.jpg",
+        "alt": "An expectant couple posing together against a dark studio background - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "portraits-7",
+        "url": "/photos/portraits-08.jpg",
+        "alt": "Three people in brightly colored outfits in a studio portrait - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": "events",
+    "title": "You had to be there",
+    "category": "Events",
+    "summary": "The energy of a room and the people who give a gathering its soul.",
+    "story": "The energy of a room and the people who give a gathering its soul.",
+    "coverUrl": "/photos/events-01.jpg",
+    "date": "",
+    "location": "",
+    "published": true,
+    "order": 30,
+    "updatedAt": "2026-10-10T16:06:44.676Z",
+    "photos": [
+      {
+        "id": "events-0",
+        "url": "/photos/events-01.jpg",
+        "alt": "A singer performing at a warmly lit evening gathering - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "events-1",
+        "url": "/photos/events-02.jpg",
+        "alt": "A live performance surrounded by lights and an audience - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "events-2",
+        "url": "/photos/events-03.jpg",
+        "alt": "Guests in colorful clothing sharing a joyful conversation outdoors - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "events-3",
+        "url": "/photos/events-04.jpg",
+        "alt": "Guests arriving along a red carpet at an event entrance - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "events-4",
+        "url": "/photos/events-05.jpg",
+        "alt": "A group arriving at an event on a red carpet - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "events-5",
+        "url": "/photos/events-06.jpg",
+        "alt": "A group portrait of guests in coordinated dark outfits - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "events-6",
+        "url": "/photos/events-07.jpg",
+        "alt": "Two smiling guests posing together at an evening celebration - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "events-7",
+        "url": "/photos/events-08.jpg",
+        "alt": "A speaker addressing a seated panel at a gathering - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": "architecture",
+    "title": "Spaces with something to say",
+    "category": "Architecture",
+    "summary": "A conversation between light, form, and the spaces we inhabit.",
+    "story": "A conversation between light, form, and the spaces we inhabit.",
+    "coverUrl": "/photos/architecture-01.jpg",
+    "date": "",
+    "location": "",
+    "published": true,
+    "order": 40,
+    "updatedAt": "2026-10-10T16:06:44.676Z",
+    "photos": [
+      {
+        "id": "architecture-0",
+        "url": "/photos/architecture-01.jpg",
+        "alt": "A rooftop lounge with patterned flooring and comfortable seating - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "architecture-1",
+        "url": "/photos/architecture-02.jpg",
+        "alt": "A glass-enclosed lounge illuminated against a blue evening sky - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "architecture-2",
+        "url": "/photos/architecture-03.jpg",
+        "alt": "A warmly lit bar framed by colorful architectural details - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "architecture-3",
+        "url": "/photos/architecture-04.jpg",
+        "alt": "An open lounge with leather seating and full-height windows - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "architecture-4",
+        "url": "/photos/architecture-05.jpg",
+        "alt": "A lounge arranged around a large blue-toned wall artwork - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "architecture-5",
+        "url": "/photos/architecture-06.jpg",
+        "alt": "A spacious meeting hall with rows of chairs and wooden wall panels - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "architecture-6",
+        "url": "/photos/architecture-07.jpg",
+        "alt": "An event hall with patterned carpeting and rows of tables - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "architecture-7",
+        "url": "/photos/architecture-08.jpg",
+        "alt": "A monochrome overhead view of an architectural interior - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": "baby",
+    "title": "Little beginnings",
+    "category": "Baby & family",
+    "summary": "The first chapters of stories that are only just beginning.",
+    "story": "The first chapters of stories that are only just beginning.",
+    "coverUrl": "/photos/baby-06.jpg",
+    "date": "",
+    "location": "",
+    "published": true,
+    "order": 50,
+    "updatedAt": "2026-10-10T16:06:44.676Z",
+    "photos": [
+      {
+        "id": "baby-0",
+        "url": "/photos/baby-06.jpg",
+        "alt": "A sleeping newborn wrapped in a blue-and-white blanket - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "baby-1",
+        "url": "/photos/baby-01.jpg",
+        "alt": "A baby photographed on a colorful first-year milestone blanket - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "baby-2",
+        "url": "/photos/baby-02.jpg",
+        "alt": "A baby lying beside carefully arranged outfits and decorations - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "baby-3",
+        "url": "/photos/baby-03.jpg",
+        "alt": "A baby in a striped outfit surrounded by small decorative objects - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "baby-4",
+        "url": "/photos/baby-04.jpg",
+        "alt": "A young child concentrating on a handheld object - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "baby-5",
+        "url": "/photos/baby-05.jpg",
+        "alt": "A toddler in a white shirt and checked trousers looking down - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "baby-6",
+        "url": "/photos/baby-07.jpg",
+        "alt": "A newborn in a blue-and-white wrap and matching knitted hat - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": "baby-7",
+        "url": "/photos/baby-08.jpg",
+        "alt": "A newborn dressed in red with a matching holiday hat - Chap Nic Pictures",
+        "title": "",
+        "description": ""
+      }
+    ]
+  }
+]

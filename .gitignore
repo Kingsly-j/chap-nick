@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+dist/
+.env*
+!.env.local.example
+*.tsbuildinfo
+
+# Private Firebase Admin credentials
+*firebase-adminsdk*.json
+service-account*.json
+
+.private/

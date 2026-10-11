@@ -1,0 +1,301 @@
+{
+  "weddings": [
+    {
+      "src": "/photos/weddings-01.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/921460d7ee8b037ce5936290d2c49ed6-xlarge.jpg",
+      "alt": "A couple in dark blue and silver wedding attire sharing a smile outdoors - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/weddings-02.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/f66d169fe308dc363d8b47e53d9b4e3f-xlarge.jpg",
+      "alt": "A wedding couple standing together in front of an ornate entrance - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/weddings-03.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/866648386a027c38b24590d59915cd99-xlarge.jpg",
+      "alt": "A couple beneath an entrance framed by palm trees - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/weddings-04.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/55137493b5d9f440132a035205a7fe75-xlarge.jpg",
+      "alt": "A full-length wedding portrait on a palm-lined driveway - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1280
+    },
+    {
+      "src": "/photos/weddings-05.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/7e2859bf6401e994817f17dffc778ac3-xlarge.jpg",
+      "alt": "A wedding couple posing closely together in coordinated formal attire - Chap Nic Pictures",
+      "width": 1024,
+      "height": 819
+    },
+    {
+      "src": "/photos/weddings-06.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/d0c0459821fdf1906407d24ec8796c5c-xlarge.jpg",
+      "alt": "A wedding party dressed in white outside a grand entrance - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/weddings-07.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/8c91b825a119fddbcfab51ac7c0d38de-xlarge.jpg",
+      "alt": "A woman in an elegant black dress and wide-brimmed hat - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "src": "/photos/weddings-08.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/8b9fb654c0140554a33227e5a1313942-xlarge.jpg",
+      "alt": "A group wedding portrait in coordinated blue, black, and floral outfits - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    }
+  ],
+  "portraits": [
+    {
+      "src": "/photos/portraits-01.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/d438cda2d599463bcbe9feda2c9ca759-xlarge.jpg",
+      "alt": "A maternity portrait in a flowing ivory dress against a dark studio backdrop - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "src": "/photos/portraits-02.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/226b4740f5ac246af3fb92aca64eeaa7-xlarge.jpg",
+      "alt": "An expressive seated maternity portrait with one arm raised - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "/photos/portraits-03.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/3d2621006a134f078f427b6f2be66451-xlarge.jpg",
+      "alt": "A woman in a vibrant green patterned outfit holding a drink - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "src": "/photos/portraits-04.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/63c5e23bf0abbafc382ef560d65a7971-xlarge.JPG",
+      "alt": "A studio portrait in a blue patterned dress and matching headwrap - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1280
+    },
+    {
+      "src": "/photos/portraits-05.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/9d56d9600dc9be023abbd12544605db7-xlarge.jpg",
+      "alt": "A woman in a white outfit standing beside a floral arrangement - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "src": "/photos/portraits-06.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/42e539d3b5223bba3704a33ba601e251-xlarge.jpg",
+      "alt": "A seated portrait in white against a warm wooden backdrop - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "src": "/photos/portraits-07.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/e6129b9d4fa04e70a5c78b28a3603fb9-xlarge.jpg",
+      "alt": "An expectant couple posing together against a dark studio background - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "src": "/photos/portraits-08.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/ec6c90f8d55d33d0904d10eda5e64f6a-xlarge.jpg",
+      "alt": "Three people in brightly colored outfits in a studio portrait - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    }
+  ],
+  "events": [
+    {
+      "src": "/photos/events-01.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/85823f9ae7ebf5f90cc6d99fdf7fadc3-xlarge.JPG",
+      "alt": "A singer performing at a warmly lit evening gathering - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/events-02.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/91cb82cb59475d97b190309ceb7c8615-xlarge.JPG",
+      "alt": "A live performance surrounded by lights and an audience - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/events-03.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/bcea544fbfe1a4d720e42a46f521f158-xlarge.jpg",
+      "alt": "Guests in colorful clothing sharing a joyful conversation outdoors - Chap Nic Pictures",
+      "width": 1024,
+      "height": 819
+    },
+    {
+      "src": "/photos/events-04.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/0f574f0b58d9e4ef275f32078b2d213d-xlarge.jpg",
+      "alt": "Guests arriving along a red carpet at an event entrance - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/events-05.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/8c1d4a6f0082b66cd8d52929ef7abfa2-xlarge.jpg",
+      "alt": "A group arriving at an event on a red carpet - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/events-06.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/9c284e710ccb7f615376dd45cedd2085-xlarge.jpg",
+      "alt": "A group portrait of guests in coordinated dark outfits - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "/photos/events-07.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/ecbae762d83003f1b07a1e438d42b399-xlarge.JPG",
+      "alt": "Two smiling guests posing together at an evening celebration - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/events-08.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/80bfa09a55c107c94d4e44233f05fed9-xlarge.jpg",
+      "alt": "A speaker addressing a seated panel at a gathering - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    }
+  ],
+  "architecture": [
+    {
+      "src": "/photos/architecture-01.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/fc7a0f8a902be803cb77c30dcfc68df7-xlarge.jpg",
+      "alt": "A rooftop lounge with patterned flooring and comfortable seating - Chap Nic Pictures",
+      "width": 1024,
+      "height": 684
+    },
+    {
+      "src": "/photos/architecture-02.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/d81124d613016c96b37cc41c6039d8c0-xlarge.jpg",
+      "alt": "A glass-enclosed lounge illuminated against a blue evening sky - Chap Nic Pictures",
+      "width": 1024,
+      "height": 682
+    },
+    {
+      "src": "/photos/architecture-03.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/3f3dd2b6ef7741fe05fd62970256ddf2-xlarge.jpg",
+      "alt": "A warmly lit bar framed by colorful architectural details - Chap Nic Pictures",
+      "width": 1024,
+      "height": 682
+    },
+    {
+      "src": "/photos/architecture-04.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/720b6c9d4f49c989f30a7e87d4d42f13-xlarge.jpg",
+      "alt": "An open lounge with leather seating and full-height windows - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/architecture-05.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/f5b0d46b8cd23201e33c689b28f350ae-xlarge.jpg",
+      "alt": "A lounge arranged around a large blue-toned wall artwork - Chap Nic Pictures",
+      "width": 1024,
+      "height": 682
+    },
+    {
+      "src": "/photos/architecture-06.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/e4f05ed9b0cc23e812036752f6fb0482-xlarge.jpg",
+      "alt": "A spacious meeting hall with rows of chairs and wooden wall panels - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/architecture-07.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/6abcb82ae3232dad5d8fce10faf849c3-xlarge.jpg",
+      "alt": "An event hall with patterned carpeting and rows of tables - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/architecture-08.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/e77df04928d1be65f960907a06309bbe-xlarge.jpg",
+      "alt": "A monochrome overhead view of an architectural interior - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    }
+  ],
+  "baby": [
+    {
+      "src": "/photos/baby-06.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/a3fbedbc623c76cbc57b1b0453342feb-xlarge.jpg",
+      "alt": "A sleeping newborn wrapped in a blue-and-white blanket - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/baby-01.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/193aced50904f7713851a2b107ae15bc-xlarge.jpg",
+      "alt": "A baby photographed on a colorful first-year milestone blanket - Chap Nic Pictures",
+      "width": 1024,
+      "height": 819
+    },
+    {
+      "src": "/photos/baby-02.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/8f69cdc88940b42e835aec1a27258380-xlarge.jpg",
+      "alt": "A baby lying beside carefully arranged outfits and decorations - Chap Nic Pictures",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/photos/baby-03.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/01fbc4ec00f260342de7a4e188cb0d9b-xlarge.jpg",
+      "alt": "A baby in a striped outfit surrounded by small decorative objects - Chap Nic Pictures",
+      "width": 1024,
+      "height": 819
+    },
+    {
+      "src": "/photos/baby-04.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/546e136c37acba9a9e58078b77c23349-xlarge.jpg",
+      "alt": "A young child concentrating on a handheld object - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "src": "/photos/baby-05.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/9adfffc3953ae9b0f133c992cf0732d0-xlarge.jpg",
+      "alt": "A toddler in a white shirt and checked trousers looking down - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1280
+    },
+    {
+      "src": "/photos/baby-07.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/1887aef3f74dbcb7f900a7e52b29de2a-xlarge.jpg",
+      "alt": "A newborn in a blue-and-white wrap and matching knitted hat - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "src": "/photos/baby-08.jpg",
+      "sourceUrl": "https://images.pixieset.com/05263062/fac99b736db06c144a21f04e4e442145-xlarge.jpg",
+      "alt": "A newborn dressed in red with a matching holiday hat - Chap Nic Pictures",
+      "width": 1024,
+      "height": 1536
+    }
+  ],
+  "videos": [
+    {
+      "src": "/photos/film-cover.jpg",
+      "sourceUrl": "https://i.ytimg.com/vi/7hLBB-ZqxL4/maxresdefault.jpg",
+      "alt": "A frame from the Chap Nic Pictures film collection",
+      "width": 1280,
+      "height": 720
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+export default function Loading() { return <main className="gallery-loading"><p>CHAP NIC PICTURES</p><h1>Opening the story...</h1></main>; }
