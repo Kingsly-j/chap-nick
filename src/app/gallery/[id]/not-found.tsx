@@ -1,2 +1,2 @@
 import Link from 'next/link';
-export default function NotFound() { return <main className="gallery-loading"><h1>This collection is not available.</h1><p>It may be unpublished or no longer available.</p><Link href="/#archive">Explore the gallery</Link></main>; }
+export default function NotFound() { return <main className="gallery-loading"><h1>This collection is not available.</h1><p>It may be unpublished or no longer available.</p><Link href="/weddings">Explore the gallery</Link></main>; }

@@ -1,0 +1,5 @@
+import { getAdminFirestore } from '@/lib/firebase-admin';
+import { requireAdmin, apiError, HttpError, privateHeaders, readJson } from '@/lib/admin-access';
+export const runtime='nodejs';
+export async function GET(request:Request){try{await requireAdmin(request);const rows=await getAdminFirestore().collection('reviews').orderBy('createdAt','desc').limit(200).get();return Response.json({reviews:rows.docs.map(d=>({...d.data(),id:d.id}))},{headers:privateHeaders});}catch(e){return apiError(e);}}
+export async function PATCH(request:Request){try{const admin=await requireAdmin(request);const data=await readJson(request);if(!data||typeof data.id!=='string'||!/^[a-f0-9]{64}$/.test(data.id)||!['approved','rejected'].includes(data.status))throw new HttpError(400,'Invalid review action.');const ref=getAdminFirestore().collection('reviews').doc(data.id);await getAdminFirestore().runTransaction(async tx=>{if(!(await tx.get(ref)).exists)throw new HttpError(404,'Review not found.');tx.update(ref,{status:data.status,moderatedBy:admin.uid});});return Response.json({ok:true},{headers:privateHeaders});}catch(e){return apiError(e);}}

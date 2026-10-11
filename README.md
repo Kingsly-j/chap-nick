@@ -43,3 +43,10 @@ Published collections are stored in Firestore at `portfolioCollections`. Visitor
 `npm run build` includes TypeScript validation. The local browser check covers desktop/mobile layout, gallery filtering, keyboard lightbox, film selection, and mobile navigation.
 
 Run `node --experimental-strip-types --test tests/collection-validation.test.mjs` to check collection limits, URL handling, required image descriptions, valid dates, and draft flags.
+
+## Wedding-focused pages
+
+The public site is split into Home (/), Recent Weddings (/weddings), Films (/videos), and Contact (/contact). The homepage retains its animated wedding hero, reveals, parallax, and a small portrait selection including Mic Monsta. Wedding cards open the existing story and slideshow pages. The wedding journal sorts dated collections newest first, then uses display order. Only wedding and portrait collections (plus the Mic Monsta portrait) are publicly accessible; older categories remain available in the admin without being deleted. Set category to Weddings when adding a wedding story.
+
+## Customer reviews
+The homepage contains clearly labeled sample reviews until approved customer reviews exist. Customers can submit a name, 1–5 stars, and a written review. Submissions are stored as pending in Firestore reviews; admins approve or hide them at /admin/reviews. Public responses omit moderation details. Exact duplicate submissions are rejected. Sample reviews are never stored as genuine customer feedback.
