@@ -17,3 +17,20 @@
 @media(max-width:800px){.photographer-story{grid-template-columns:1fr;gap:55px}.story-editorial-photo{max-width:100%}.story-editorial-photo img{height:460px}.story-photo-stamp{right:12px}.reviews-section>.review-grid{grid-template-columns:1fr}.story-section-number{margin-bottom:30px}.review-form-layout{padding:25px}.reviews-section .review-card{padding:28px}.story-chapters{margin-bottom:30px}}@media(prefers-reduced-motion:reduce){.reviews-section .review-card{transition:none}.reviews-section .review-card:hover{transform:none}}
 
 .hero-booking-button{display:inline-flex;align-items:center;justify-content:center;gap:30px;padding:20px 28px;margin-left:25px;background:#d7e7a6;color:#20281f;font-size:15px;font-weight:700;letter-spacing:.02em;border:1px solid #e7efcf;box-shadow:0 8px 30px #0004;transition:background .2s,transform .2s}.hero-booking-button:hover{background:#f3f5dd;transform:translateY(-2px)}.desktop-nav .nav-booking-button{padding:14px 18px;background:#d7e7a6;color:#20281f;font-weight:700}.hero-copy{top:25%}.hero-caption{flex-wrap:wrap}.giveaway-banner{scroll-margin-top:30px}@media(max-width:700px){.hero-copy{top:27%}.hero-booking-button{margin-left:0;padding:17px 25px;min-width:210px}.hero-caption{gap:15px}.hero-caption .hero-booking-button{flex-basis:100%;max-width:280px}}@media(prefers-reduced-motion:reduce){.hero-booking-button{transition:none}}
+
+.review-mobile-controls{display:none}
+@media(max-width:700px){
+ .portfolio>.site-header,.portfolio>.site-header.inner-header{position:fixed!important;top:0;left:0;right:0;z-index:60;background:#20281ff5;backdrop-filter:blur(14px);padding:14px 6%;box-shadow:0 2px 18px #0002}
+ .portfolio>.site-header .wordmark{font-size:28px}
+ .portfolio>.mobile-menu{z-index:50;padding-top:100px;overflow-y:auto;justify-content:flex-start}
+ .portfolio>.site-header.inner-header~main{padding-top:83px}
+ .reviews-section>.review-grid{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scroll-padding-left:0;align-items:stretch;margin:20px 0;padding:4px 0 18px;scrollbar-width:thin;scrollbar-color:#929d5f transparent}
+ .reviews-section>.review-grid>.review-card{flex:0 0 88%;min-width:0;scroll-snap-align:start;padding:24px;display:flex;flex-direction:column}
+ .reviews-section>.review-grid>.review-card:hover{transform:none}
+ .reviews-section .review-author{margin-top:auto}
+ .reviews-section .review-card blockquote{font-size:20px;line-height:1.6}
+ .review-mobile-controls{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:25px}
+ .review-mobile-controls>span{font-size:11px;letter-spacing:.06em;color:#626b4d}
+ .review-mobile-controls>div{display:flex;gap:8px}
+ .review-mobile-controls button{border:1px solid #929d78;background:transparent;width:42px;height:42px;border-radius:50%;font-size:20px}
+}
