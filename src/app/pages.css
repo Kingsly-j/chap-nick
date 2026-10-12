@@ -34,3 +34,21 @@
  .review-mobile-controls>div{display:flex;gap:8px}
  .review-mobile-controls button{border:1px solid #929d78;background:transparent;width:42px;height:42px;border-radius:50%;font-size:20px}
 }
+
+@media(max-width:700px){
+ .portfolio>.site-header,.portfolio>.site-header.inner-header{background:transparent!important;backdrop-filter:none;box-shadow:none;transition:opacity .3s ease,transform .3s ease;mix-blend-mode:difference;color:#fff}
+ .portfolio>.site-header[data-scroll-visible="false"]{opacity:0;transform:translateY(-12px);pointer-events:none}
+ .portfolio>.site-header:focus-within,.portfolio>.site-header:has(+ .mobile-menu){opacity:1;transform:none;pointer-events:auto}
+ .portfolio>.site-header:has(+ .mobile-menu){mix-blend-mode:normal}
+}
+@media(max-width:700px) and (prefers-reduced-motion:reduce){.portfolio>.site-header{transition:none;transform:none!important}}
+
+.section-subheading{font:italic clamp(19px,2vw,26px)/1.5 Georgia,serif;margin-top:20px!important;max-width:100%}
+.home-weddings .section-heading h2{font-size:clamp(44px,6vw,84px)}
+.giveaway-banner h2.giveaway-offer{font-family:var(--sans);font-size:clamp(32px,4vw,58px);font-weight:750;line-height:1.15;letter-spacing:-.035em}
+.giveaway-offer span{display:block;margin-top:18px;font-size:.75em;letter-spacing:-.02em}
+.giveaway-banner .pill-link{font-size:clamp(17px,1.6vw,22px);font-weight:750;padding:24px 28px;line-height:1.35;text-align:center;display:flex;justify-content:center;align-items:center;border:2px solid #20281f;box-shadow:0 8px 0 #20281f24}
+.home-weddings .text-link{font-size:17px;font-weight:650}.home-invitation .pill-link{font-size:20px;font-weight:700;padding:22px 30px;background:#20281f;color:#f5f1e6}
+@media(max-width:700px){.giveaway-banner h2.giveaway-offer{font-size:clamp(32px,8.8vw,43px)}.giveaway-banner .pill-link{width:100%;min-height:72px;font-size:20px;padding:22px 20px}.giveaway-banner{gap:24px}.giveaway-banner .giveaway-value{font-size:64px}.home-weddings .section-heading h2{font-size:clamp(44px,12vw,64px)}.hero-booking-button{font-size:18px;font-weight:750}.home-invitation .pill-link{width:100%;font-size:19px}}
+
+.story-editorial-photo img[src="/photos/nick.jpeg"]{height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center;filter:none}
