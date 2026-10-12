@@ -50,3 +50,7 @@ The public site is split into Home (/), Recent Weddings (/weddings), Films (/vid
 
 ## Customer reviews
 The homepage contains clearly labeled sample reviews until approved customer reviews exist. Customers can submit a name, 1–5 stars, and a written review. Submissions are stored as pending in Firestore reviews; admins approve or hide them at /admin/reviews. Public responses omit moderation details. Exact duplicate submissions are rejected. Sample reviews are never stored as genuine customer feedback.
+
+## Monthly wedding giveaway
+/giveaway accepts private wedding entries with both names, email, phone/WhatsApp, date, city, venue, love story, a pre-nuptial photo location, and contact consent. The homepage and navigation link to it. Rounds use calendar months in Africa/Lagos, with one entry per email per month. Entries are stored in giveawayEntries; giveawayMonths records the selected winner and closes that round. A new calendar month opens automatically.
+Admins use /admin/giveaway to browse by month, contact applicants manually, keep private notes, shortlist, mark secondary winners, and choose or replace the grand-prize winner. Selecting another winner returns the previous winner to the shortlist. No emails or WhatsApp messages are sent automatically, and applicant details are never returned by public endpoints.

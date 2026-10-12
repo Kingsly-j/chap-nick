@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './gallery.css';
 import './pages.css';
+import './giveaway.css';
 import FirebaseProvider from '@/components/firebase-provider';
 
 export const metadata: Metadata = {
