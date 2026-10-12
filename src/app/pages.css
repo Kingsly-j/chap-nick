@@ -45,10 +45,12 @@
 
 .section-subheading{font:italic clamp(19px,2vw,26px)/1.5 Georgia,serif;margin-top:20px!important;max-width:100%}
 .home-weddings .section-heading h2{font-size:clamp(44px,6vw,84px)}
-.giveaway-banner h2.giveaway-offer{font-family:var(--sans);font-size:clamp(32px,4vw,58px);font-weight:750;line-height:1.15;letter-spacing:-.035em}
+.giveaway-banner h2.giveaway-offer{font-family:var(--serif,Georgia,serif);font-size:clamp(36px,4.6vw,66px);font-weight:400;line-height:1.12;letter-spacing:-.025em}
 .giveaway-offer span{display:block;margin-top:18px;font-size:.75em;letter-spacing:-.02em}
-.giveaway-banner .pill-link{font-size:clamp(17px,1.6vw,22px);font-weight:750;padding:24px 28px;line-height:1.35;text-align:center;display:flex;justify-content:center;align-items:center;border:2px solid #20281f;box-shadow:0 8px 0 #20281f24}
+.giveaway-banner .pill-link{font-size:clamp(17px,1.6vw,22px);font-weight:750;padding:24px 28px;line-height:1.35;text-align:center;display:flex;justify-content:center;align-items:center;border:2px solid #20281f;box-shadow:0 6px 20px #20281f18}
 .home-weddings .text-link{font-size:17px;font-weight:650}.home-invitation .pill-link{font-size:20px;font-weight:700;padding:22px 30px;background:#20281f;color:#f5f1e6}
 @media(max-width:700px){.giveaway-banner h2.giveaway-offer{font-size:clamp(32px,8.8vw,43px)}.giveaway-banner .pill-link{width:100%;min-height:72px;font-size:20px;padding:22px 20px}.giveaway-banner{gap:24px}.giveaway-banner .giveaway-value{font-size:64px}.home-weddings .section-heading h2{font-size:clamp(44px,12vw,64px)}.hero-booking-button{font-size:18px;font-weight:750}.home-invitation .pill-link{width:100%;font-size:19px}}
 
 .story-editorial-photo img[src="/photos/nick.jpeg"]{height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center;filter:none}
+
+.giveaway-offer em{display:block;margin-top:12px;font-family:var(--serif,Georgia,serif);font-weight:400;color:#40542c}.giveaway-offer span{font-family:var(--sans);font-size:clamp(16px,1.7vw,22px);font-weight:650;letter-spacing:.09em;margin-top:25px;color:#344526}.home-weddings h2 em,.reviews-section h2 em{color:#657646}.featured-film h2 em{color:#d5dfb2}.photographer-story h2 em{color:#d5dfb2}.home-weddings .section-subheading{color:#65705a}.giveaway-banner .giveaway-value{font-style:italic;color:#40542c}.giveaway-banner .giveaway-value small{font-style:normal;color:#25341f}.giveaway-banner .pill-link{font-weight:600;border-radius:2px}.hero-booking-button{font-weight:600}.home-invitation .pill-link{font-weight:600}@media(max-width:700px){.giveaway-banner h2.giveaway-offer{font-size:clamp(36px,10vw,46px)}.giveaway-banner .pill-link{font-weight:600}.hero-booking-button{font-weight:600}}
