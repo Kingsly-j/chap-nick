@@ -5,6 +5,7 @@ import './pages.css';
 import './giveaway.css';
 import FirebaseProvider from '@/components/firebase-provider';
 import WhatsAppButton from '@/components/whatsapp-button';
+import AdminShortcut from '@/components/admin-shortcut';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
@@ -14,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}<WhatsAppButton /><FirebaseProvider /></body></html>;
+  return <html lang="en"><body>{children}<WhatsAppButton /><AdminShortcut /><FirebaseProvider /></body></html>;
 }

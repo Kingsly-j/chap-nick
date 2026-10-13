@@ -23,6 +23,6 @@ export default function StoryGallery() {
     {loading&&<p role="status" className="gallery-status">Opening the collection room...</p>}
     {error&&<div role="alert" className="gallery-status"><p>{error}</p><button onClick={()=>{setLoading(true);setError('');setAttempt(value=>value+1);}}>Try again</button></div>}
     {!loading&&!error&&<><div className="collection-grid">{visible.map((collection,index)=><Link key={collection.id} className="collection-story-card" href={'/gallery/'+collection.id}><div className="collection-cover"><img src={collection.coverUrl} alt={collection.title} loading="lazy"/><span className="collection-category">{collection.category}</span><span className="collection-open">OPEN THE STORY &#8599;</span></div><div className="collection-card-copy"><small>{String(index+1).padStart(2,'0')} / {collection.photos.length} FRAMES</small><h3>{collection.title}</h3><p>{collection.summary}</p>{collection.location&&<span>{collection.location}</span>}</div></Link>)}</div>{visible.length===0&&<p className="gallery-status">Wedding stories are being prepared. Come back soon.</p>}</>}
-    <div className="archive-bottom"><span>MORE THAN PHOTOGRAPHS. STORIES WORTH KEEPING.</span><Link className="text-link" href="/admin">Studio access &#8599;</Link></div>
+    <div className="archive-bottom"><span>MORE THAN PHOTOGRAPHS. STORIES WORTH KEEPING.</span></div>
   </section>;
 }
