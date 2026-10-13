@@ -30,7 +30,7 @@ Copy `.env.local.example` to `.env.local` on a fresh checkout. Browser Analytics
 
 ## Studio dashboard
 
-Open `/admin`. The first administrator is `cheking1270@gmail.com`. Use the private link in `.private/first-admin-setup.txt` to choose a password, or use **Set or reset password** on the sign-in page. The setup file is excluded from Git.
+Open `/admin`. The first administrator is `chapnicpictures@gmail.com`. Use **Set or reset password** on the sign-in page if you need to change its password. The private setup files are excluded from Git.
 
 Administrators can create and edit collections, add one or multiple direct photo URLs, choose a cover, set the category and display order, write a collection story and per-slide captions, reorder frames, save drafts, publish, and delete collections. The **Administrators** tab grants the same access to additional email addresses. New accounts receive a private setup link in the dashboard; no invitation email is automatically sent. Existing accounts retain their current password.
 
@@ -49,7 +49,7 @@ Run `node --experimental-strip-types --test tests/collection-validation.test.mjs
 The public site is split into Home (/), Recent Weddings (/weddings), Films (/videos), and Contact (/contact). The homepage retains its animated wedding hero, reveals, parallax, and a small portrait selection including Mic Monsta. Wedding cards open the existing story and slideshow pages. The wedding journal sorts dated collections newest first, then uses display order. Only wedding and portrait collections (plus the Mic Monsta portrait) are publicly accessible; older categories remain available in the admin without being deleted. Set category to Weddings when adding a wedding story.
 
 ## Customer reviews
-The homepage contains clearly labeled sample reviews until approved customer reviews exist. Customers can submit a name, 1–5 stars, and a written review. Submissions are stored as pending in Firestore reviews; admins approve or hide them at /admin/reviews. Public responses omit moderation details. Exact duplicate submissions are rejected. Sample reviews are never stored as genuine customer feedback.
+The homepage contains clearly labeled sample reviews until approved customer reviews exist. Customers can submit a name, 1ï¿½5 stars, and a written review. Submissions are stored as pending in Firestore reviews; admins approve or hide them at /admin/reviews. Public responses omit moderation details. Exact duplicate submissions are rejected. Sample reviews are never stored as genuine customer feedback.
 
 ## Monthly wedding giveaway
 /giveaway accepts private wedding entries with both names, email, phone/WhatsApp, date, city, venue, love story, a pre-nuptial photo location, and contact consent. The homepage and navigation link to it. Rounds use calendar months in Africa/Lagos, with one entry per email per month. Entries are stored in giveawayEntries; giveawayMonths records the selected winner and closes that round. A new calendar month opens automatically.
