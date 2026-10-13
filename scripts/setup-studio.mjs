@@ -11,7 +11,7 @@ if (projectId !== 'nick-dac56') throw new Error('Unexpected Firebase project. Se
 const app = initializeApp({ credential: applicationDefault(), projectId });
 const auth = getAuth(app);
 const db = getFirestore(app);
-const email = 'cheking1270@gmail.com';
+const email = 'chapnicpictures@gmail.com';
 let user, created = false;
 try { user = await auth.getUserByEmail(email); }
 catch (error) { if (error.code !== 'auth/user-not-found') throw error; user = await auth.createUser({ email, password: randomBytes(32).toString('base64url') }); created = true; }
