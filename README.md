@@ -26,7 +26,7 @@ The enquiry form opens the visitor's email app; it does not submit or store enqu
 
 ## Firebase
 
-Copy `.env.local.example` to `.env.local` on a fresh checkout. Browser Analytics initializes only in supported environments. Admin helpers are protected with `server-only` and load private credentials from the local path in `GOOGLE_APPLICATION_CREDENTIALS`. Never commit service-account JSON or put Admin credentials in `NEXT_PUBLIC_` variables. Configure a production credential source separately; the local Windows file path is not portable.
+Copy `.env.local.example` to `.env.local` on a fresh checkout. Browser Analytics initializes only in supported environments. Admin helpers are protected with `server-only` and load credentials from `FIREBASE_ADMIN_SERVICE_ACCOUNT_BASE64` when set, or use `GOOGLE_APPLICATION_CREDENTIALS` locally. For hosting, add the base64-encoded service-account JSON as a server-only environment secret and redeploy. Never commit service-account JSON or put Admin credentials in `NEXT_PUBLIC_` variables.
 
 ## Studio dashboard
 

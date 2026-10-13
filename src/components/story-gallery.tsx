@@ -14,7 +14,7 @@ export default function StoryGallery() {
       const data=await response.json();
       if(!response.ok)throw new Error(data.error || 'Could not load the collections.');
       setItems(data.collections);
-    }).catch(error=>{if(error.name!=='AbortError')setError('The collections could not be loaded. Please try again.');}).finally(()=>{if(!controller.signal.aborted)setLoading(false);});
+    }).catch(error=>{if(error.name!=='AbortError')setError(error instanceof Error&&error.message?error.message:'The collections could not be loaded. Please try again.');}).finally(()=>{if(!controller.signal.aborted)setLoading(false);});
     return()=>controller.abort();
   },[attempt]);
   const visible=items.filter(item=>item.category==='Weddings').sort((a,b)=>(b.date||'').localeCompare(a.date||'')||a.order-b.order);
