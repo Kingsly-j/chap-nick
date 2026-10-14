@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, sendPasswordResetEmail, signOut, type User } from 'firebase/auth';
 import { getFirebaseApp } from '@/lib/firebase';
 import { categories, type GalleryCollection, validateCollection } from '@/lib/collection-schema';
+import type { Film } from '@/lib/film-schema';
 
 type Member = { uid: string; email: string; disabled: boolean };
 const empty = (): GalleryCollection => ({ id:'', title:'', category:'Weddings', summary:'', story:'', coverUrl:'', date:'', location:'', published:false, order:10, updatedAt:'', photos:[] });
@@ -20,13 +21,16 @@ export default function AdminDashboard() {
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
   const [busy, setBusy] = useState(false);
-  const [tab, setTab] = useState<'collections' | 'admins'>('collections');
+  const [tab, setTab] = useState<'collections' | 'films' | 'admins'>('collections');
   const [items, setItems] = useState<GalleryCollection[]>([]);
   const [draft, setDraft] = useState<GalleryCollection | null>(null);
   const [dirty, setDirty] = useState(false);
   const [members, setMembers] = useState<Member[]>([]);
   const [newEmail, setNewEmail] = useState('');
   const [setupLink, setSetupLink] = useState('');
+  const [films, setFilms] = useState<Film[]>([]);
+  const [filmUrl, setFilmUrl] = useState('');
+  const [filmTitle, setFilmTitle] = useState('');
 
   async function api(path: string, options: RequestInit = {}, current = user) {
     if (!current) throw new Error('Please sign in.');
@@ -48,6 +52,10 @@ export default function AdminDashboard() {
           const data = await response.json();
           if (!response.ok) throw new Error(data.error);
           setItems(data.collections); setAllowed(true);
+          const filmResponse = await fetch('/api/admin/films', {headers:{Authorization:'Bearer '+token}});
+          const filmData = await filmResponse.json();
+          if (!filmResponse.ok) throw new Error(filmData.error);
+          setFilms(filmData.films);
         } catch (err) { setError(errorMessage(err)); }
       }
       setReady(true);
@@ -92,6 +100,22 @@ export default function AdminDashboard() {
     setDraft(null);setDirty(false);setTab('admins');setError('');setNotice('');
     try {setMembers((await api('/api/admin/members')).admins);}catch(err){setError(errorMessage(err));}
   }
+  async function showFilms() {
+    if (dirty && !confirm('Discard your unsaved collection changes?')) return;
+    setDraft(null);setDirty(false);setTab('films');setError('');setNotice('');
+    try {setFilms((await api('/api/admin/films')).films);}catch(err){setError(errorMessage(err));}
+  }
+  async function addFilm(event: React.FormEvent) {
+    event.preventDefault();setBusy(true);setError('');setNotice('');
+    try {const data=await api('/api/admin/films',{method:'POST',body:JSON.stringify({film:{id:filmUrl,title:filmTitle}})});setFilms(data.films);setFilmUrl('');setFilmTitle('');setNotice('Film added to the portfolio.');}
+    catch(err){setError(errorMessage(err));}finally{setBusy(false);}
+  }
+  async function removeFilm(id:string) {
+    if(!confirm('Remove this film from the public portfolio?'))return;
+    setBusy(true);setError('');setNotice('');
+    try {const data=await api('/api/admin/films',{method:'PUT',body:JSON.stringify({films:films.filter(film=>film.id!==id)})});setFilms(data.films);setNotice('Film removed from the portfolio.');}
+    catch(err){setError(errorMessage(err));}finally{setBusy(false);}
+  }
   async function addAdmin(event: React.FormEvent) {
     event.preventDefault();setBusy(true);setError('');setNotice('');setSetupLink('');
     try {const data=await api('/api/admin/members',{method:'POST',body:JSON.stringify({email:newEmail})});setNotice(data.message);setSetupLink(data.setupLink || '');setNewEmail('');setMembers((await api('/api/admin/members')).admins);}
@@ -108,8 +132,8 @@ export default function AdminDashboard() {
       <button disabled={busy} type="button" className="secondary" onClick={async()=>{if(!email){setError('Enter your admin email first.');return;}setBusy(true);setError('');try{await sendPasswordResetEmail(getAuth(getFirebaseApp()),email);setNotice('If this account exists, a password setup/reset email will arrive shortly.');}catch(err){setError(errorMessage(err));}finally{setBusy(false);}}}>Set or reset password</button>
     </form>}<Link href="/">Back to the portfolio</Link></section></main>;
 
-  return <div className="studio"><aside className="studio-sidebar"><Link href="/" className="admin-brand">chap nic <i>studio.</i></Link><p className="admin-kicker">YOUR STORIES, YOUR WAY</p><nav aria-label="Admin navigation"><button className={tab==='collections'?'active':''} onClick={()=>setTab('collections')}>Collections <span>{items.length}</span></button><button className={tab==='admins'?'active':''} onClick={showAdmins}>Administrators</button><Link onClick={e=>{if(dirty&&!confirm("Discard unsaved collection changes?"))e.preventDefault();}} href="/admin/giveaway">Wedding giveaway</Link><Link onClick={e=>{if(dirty&&!confirm("Discard unsaved collection changes?"))e.preventDefault();}} href="/admin/reviews">Customer reviews</Link><Link href="/weddings" target="_blank">View portfolio &#8599;</Link></nav><div className="studio-account"><span>{user.email}</span><button onClick={()=>{if(!dirty||confirm('Discard unsaved changes and sign out?'))void signOut(getAuth(getFirebaseApp()));}}>Sign out</button></div></aside>
-    <main className="studio-main"><header className="studio-heading"><div><p className="admin-kicker">CHAP NIC PICTURES / ADMIN</p><h1>{tab==='collections'?'The collection room.':'The people behind it.'}</h1></div>{tab==='collections'&&<button onClick={()=>openCollection(empty())}>+ New collection</button>}</header>
+  return <div className="studio"><aside className="studio-sidebar"><Link href="/" className="admin-brand">chap nic <i>studio.</i></Link><p className="admin-kicker">YOUR STORIES, YOUR WAY</p><nav aria-label="Admin navigation"><button className={tab==='collections'?'active':''} onClick={()=>setTab('collections')}>Collections <span>{items.length}</span></button><button className={tab==='films'?'active':''} onClick={showFilms}>Films <span>{films.length}</span></button><button className={tab==='admins'?'active':''} onClick={showAdmins}>Administrators</button><Link onClick={e=>{if(dirty&&!confirm("Discard unsaved collection changes?"))e.preventDefault();}} href="/admin/giveaway">Wedding giveaway</Link><Link onClick={e=>{if(dirty&&!confirm("Discard unsaved collection changes?"))e.preventDefault();}} href="/admin/reviews">Customer reviews</Link><Link href="/weddings" target="_blank">View portfolio &#8599;</Link></nav><div className="studio-account"><span>{user.email}</span><button onClick={()=>{if(!dirty||confirm('Discard unsaved changes and sign out?'))void signOut(getAuth(getFirebaseApp()));}}>Sign out</button></div></aside>
+    <main className="studio-main"><header className="studio-heading"><div><p className="admin-kicker">CHAP NIC PICTURES / ADMIN</p><h1>{tab==='collections'?'The collection room.':tab==='films'?'The film room.':'The people behind it.'}</h1></div>{tab==='collections'&&<button onClick={()=>openCollection(empty())}>+ New collection</button>}</header>
       {error&&<p role="alert" className="admin-error">{error}</p>}{notice&&<p role="status" className="admin-notice">{notice}</p>}
       {tab==='collections' ? <><div className="studio-stats"><div><strong>{items.length}</strong><span>Collections</span></div><div><strong>{items.filter(item=>item.published).length}</strong><span>Published</span></div><div><strong>{items.reduce((sum,item)=>sum+item.photos.length,0)}</strong><span>Photographs</span></div></div>
         {draft ? <form className="collection-editor" onSubmit={save}><fieldset className="editor-fieldset" disabled={busy}><div className="editor-heading"><h2>{draft.id?'1. Edit collection details':'1. Start a new collection'}</h2><button type="button" className="secondary" onClick={()=>{if(!dirty||confirm('Discard unsaved changes?')){setDraft(null);setDirty(false);}}}>Back to collections</button></div>
@@ -120,7 +144,7 @@ export default function AdminDashboard() {
           <CollectionPhotos key={draft.id || "new"} draft={draft} onChange={update}/>
           <div className="editor-save"><h2>3. Save your collection</h2><p>Imported photos stay in this editor until you save. Publish only when the story and photos are ready.</p><label className="publish-choice"><input type="checkbox" checked={draft.published} onChange={e=>update({published:e.target.checked})}/>Publish in the public gallery</label><div><button type="submit" disabled={busy}>{busy?'Saving...':draft.published?'Save & publish':'Save draft'}</button>{draft.id&&draft.published&&<Link href={'/gallery/'+draft.id} target="_blank" className="secondary">View collection &#8599;</Link>}{draft.id&&<button type="button" disabled={busy} className="danger-text" onClick={deleteCollection}>Delete collection</button>}</div><small>{dirty?'Unsaved changes':'All changes saved'}</small></div>
         </fieldset></form> : <div className="admin-collection-grid">{items.map(item=><button key={item.id} className="admin-collection-card" onClick={()=>openCollection(item)}><img src={item.coverUrl} alt={item.title}/><div><span className={item.published?'badge published':'badge'}>{item.published?'Published':'Draft'}</span><h2>{item.title}</h2><p>{item.category} / {item.photos.length} photos</p></div></button>)}{items.length===0&&<p>No collections yet. Create your first story.</p>}</div>}
-      </> : <section className="admin-members"><h2>Invite another storyteller.</h2><p>Admins can manage all collections and add other administrators. New accounts get a private password setup link; existing accounts keep their current password.</p><form onSubmit={addAdmin}><label>New administrator email<input type="email" required value={newEmail} onChange={e=>setNewEmail(e.target.value)}/></label><button disabled={busy}>{busy?'Adding...':'Grant admin access'}</button></form>{setupLink&&<div className="setup-link"><label>Private password setup link<textarea readOnly value={setupLink} rows={4}/></label><button className="secondary" onClick={async()=>{try{await navigator.clipboard.writeText(setupLink);setNotice('Setup link copied. Share it privately with the new admin.');}catch{setNotice('Select and copy the setup link manually.');}}}>Copy setup link</button><small>No email has been sent automatically.</small></div>}<ul>{members.map(member=><li key={member.uid}><span>{member.email}</span><span>{member.disabled?'Disabled':'Administrator'}</span></li>)}</ul></section>}
+      </> : tab==='films' ? <section className="admin-films"><h2>Manage wedding films.</h2><p>Add a YouTube link or video ID. Removing a film hides it from the home page and film page; it does not delete the YouTube video.</p><form onSubmit={addFilm}><label>YouTube video link or ID<input required value={filmUrl} onChange={e=>setFilmUrl(e.target.value)} placeholder="https://youtu.be/..."/></label><label>Film title<input required maxLength={160} value={filmTitle} onChange={e=>setFilmTitle(e.target.value)} placeholder="Couple names"/></label><button disabled={busy}>{busy?'Adding...':'Add film'}</button></form><div className="admin-film-list">{films.map(film=><article key={film.id}><img src={film.poster} alt=""/><div><h3>{film.title}</h3><a href={film.embedUrl} target="_blank" rel="noreferrer">View film ↗</a></div><button type="button" className="danger-text" disabled={busy} onClick={()=>removeFilm(film.id)}>Remove</button></article>)}{films.length===0&&<p>No films yet. Add the first one above.</p>}</div></section> : <section className="admin-members"><h2>Invite another storyteller.</h2><p>Admins can manage all collections and add other administrators. New accounts get a private password setup link; existing accounts keep their current password.</p><form onSubmit={addAdmin}><label>New administrator email<input type="email" required value={newEmail} onChange={e=>setNewEmail(e.target.value)}/></label><button disabled={busy}>{busy?'Adding...':'Grant admin access'}</button></form>{setupLink&&<div className="setup-link"><label>Private password setup link<textarea readOnly value={setupLink} rows={4}/></label><button className="secondary" onClick={async()=>{try{await navigator.clipboard.writeText(setupLink);setNotice('Setup link copied. Share it privately with the new admin.');}catch{setNotice('Select and copy the setup link manually.');}}}>Copy setup link</button><small>No email has been sent automatically.</small></div>}<ul>{members.map(member=><li key={member.uid}><span>{member.email}</span><span>{member.disabled?'Disabled':'Administrator'}</span></li>)}</ul></section>}
     </main>
   </div>;
 }

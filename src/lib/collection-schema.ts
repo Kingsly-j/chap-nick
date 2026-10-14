@@ -11,8 +11,16 @@ function text(value: unknown, label: string, max: number, required = false): str
 export function imageUrl(value: unknown): string {
   const result = text(value, 'Image URL', 2048, true);
   if (/^\/photos\/[a-zA-Z0-9_./-]+$/.test(result) && !result.includes('..')) return result;
-  try { const url = new URL(result); if (url.protocol === 'https:' && !url.username && !url.password) return url.href; } catch {}
-  throw new InputError('Use a direct HTTPS image URL or a local /photos/ image path.');
+  try {
+    const url = new URL(result);
+    if (url.protocol !== 'https:' || url.username || url.password) throw new Error();
+    if (url.hostname === 'drive.google.com' || url.hostname === 'docs.google.com') {
+      const id = url.pathname.match(/\/file\/d\/([\w-]+)/)?.[1] || url.searchParams.get('id');
+      if (id) return 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(id) + '&sz=w2000';
+    }
+    return url.href;
+  } catch {}
+  throw new InputError('Use an HTTPS image link, a Google Drive file link, or a local /photos/ image path. Drive files must be shared so anyone with the link can view them.');
 }
 export function validateCollection(input: unknown): Omit<GalleryCollection, 'id' | 'updatedAt'> {
   if (!input || typeof input !== 'object' || Array.isArray(input)) throw new InputError('Invalid collection.');
