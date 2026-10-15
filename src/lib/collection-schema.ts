@@ -1,6 +1,6 @@
 export const categories = ['Weddings', 'Portraits', 'Events'] as const;
 export type GalleryPhoto = { id: string; url: string; alt: string; title: string; description: string };
-export type GalleryCollection = { id: string; title: string; category: string; summary: string; story: string; coverUrl: string; date: string; location: string; published: boolean; order: number; photos: GalleryPhoto[]; updatedAt: string };
+export type GalleryCollection = { id: string; title: string; category: string; summary: string; story: string; coverUrl: string; date: string; location: string; published: boolean; order: number; photos: GalleryPhoto[]; createdAt?: string; updatedAt: string };
 export class InputError extends Error {}
 function text(value: unknown, label: string, max: number, required = false): string {
   if (typeof value !== 'string' || value.length > max) throw new InputError(label + ' must be text, up to ' + max + ' characters.');

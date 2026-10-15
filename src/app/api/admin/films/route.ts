@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     } catch {}
     if (!/^[a-zA-Z0-9_-]{3,80}$/.test(id)) throw new InputError('Paste a YouTube video URL or video ID.');
     const current = await listFilms();
-    const films = await saveFilms([...current, { id, title: body.film.title, poster: 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg', embedUrl: 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0' }], admin.uid);
+    const films = await saveFilms([{ id, title: body.film.title, poster: 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg', embedUrl: 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0' }, ...current], admin.uid);
     return Response.json({ films }, { status: 201, headers: privateHeaders });
   } catch (error) { return apiError(error); }
 }

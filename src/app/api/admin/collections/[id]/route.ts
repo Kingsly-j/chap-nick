@@ -11,10 +11,12 @@ export async function PUT(request: Request, context: Context) {
     if (!validId(id)) throw new HttpError(400, 'Invalid collection ID.');
     const data = validateCollection(await readJson(request));
     const ref = getAdminFirestore().collection(COLLECTION_PATH).doc(id);
-    const collection = { ...data, id, updatedAt: new Date().toISOString() };
+    const updatedAt = new Date().toISOString();
+    let collection = { ...data, id, createdAt: updatedAt, updatedAt };
     await getAdminFirestore().runTransaction(async transaction => {
       const old = await transaction.get(ref);
       if (!old.exists) throw new HttpError(404, 'Collection not found.');
+      collection = { ...collection, createdAt: old.data()?.createdAt || old.data()?.updatedAt || updatedAt };
       transaction.set(ref, { ...collection, updatedBy: admin.uid });
     });
     return Response.json({ collection }, { headers: privateHeaders });

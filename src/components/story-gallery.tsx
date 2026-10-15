@@ -8,7 +8,7 @@ export default function StoryGallery() {
   const [loading,setLoading]=useState(true);
   const [error,setError]=useState('');
   const [attempt,setAttempt]=useState(0);
-  const visible=items.filter(item=>item.category==='Weddings').sort((a,b)=>(b.date||'').localeCompare(a.date||'')||a.order-b.order);
+  const visible=items.filter(item=>item.category==='Weddings');
   useEffect(()=>{
     const controller=new AbortController();
     fetch('/api/collections',{signal:controller.signal,cache:'no-store'}).then(async response=>{

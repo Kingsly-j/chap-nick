@@ -11,7 +11,8 @@ export async function POST(request: Request) {
     const admin = await requireAdmin(request);
     const data = validateCollection(await readJson(request));
     const ref = getAdminFirestore().collection(COLLECTION_PATH).doc();
-    const collection = { ...data, id: ref.id, updatedAt: new Date().toISOString() };
+    const createdAt = new Date().toISOString();
+    const collection = { ...data, id: ref.id, createdAt, updatedAt: createdAt };
     await ref.create({ ...collection, updatedBy: admin.uid });
     return Response.json({ collection }, { status: 201, headers: privateHeaders });
   } catch (error) { return apiError(error); }
