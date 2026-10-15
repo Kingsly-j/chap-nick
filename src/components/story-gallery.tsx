@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { GalleryCollection } from '@/lib/collection-schema';
 
 export default function StoryGallery() {
@@ -8,7 +8,6 @@ export default function StoryGallery() {
   const [loading,setLoading]=useState(true);
   const [error,setError]=useState('');
   const [attempt,setAttempt]=useState(0);
-  const archive=useRef<HTMLElement>(null);
   const visible=items.filter(item=>item.category==='Weddings').sort((a,b)=>(b.date||'').localeCompare(a.date||'')||a.order-b.order);
   useEffect(()=>{
     const controller=new AbortController();
@@ -19,19 +18,7 @@ export default function StoryGallery() {
     }).catch(error=>{if(error.name!=='AbortError')setError(error instanceof Error&&error.message?error.message:'The collections could not be loaded. Please try again.');}).finally(()=>{if(!controller.signal.aborted)setLoading(false);});
     return()=>controller.abort();
   },[attempt]);
-  useEffect(()=>{
-    if(loading||error||!visible.length)return;
-    const frame=requestAnimationFrame(()=>{
-      const element=archive.current;
-      if(!element)return;
-      const top=element.getBoundingClientRect().top+window.scrollY;
-      const firstCard=element.querySelector<HTMLElement>('.collection-story-card');
-      const target=firstCard?top+firstCard.offsetTop+firstCard.offsetHeight*.3:top;
-      window.scrollTo({top:Math.max(0,target-window.innerHeight*.7),behavior:'instant'});
-    });
-    return()=>cancelAnimationFrame(frame);
-  },[loading,error,items]);
-  return <section ref={archive} id="archive" className="archive section-pad">
+  return <section id="archive" className="archive section-pad">
     <div className="section-heading"><div><p className="eyebrow">THE STORIES BEHIND THE FRAMES</p><h2>Every wedding.<br /><em>A story of its own.</em></h2></div><p>Choose a story. Step inside.<br />Stay for the moments in between.</p></div>
     {loading&&<p role="status" className="gallery-status">Opening the collection room...</p>}
     {error&&<div role="alert" className="gallery-status"><p>{error}</p><button onClick={()=>{setLoading(true);setError('');setAttempt(value=>value+1);}}>Try again</button></div>}

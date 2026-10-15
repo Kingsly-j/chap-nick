@@ -1,4 +1,4 @@
-export const categories = ['Weddings', 'Portraits'] as const;
+export const categories = ['Weddings', 'Portraits', 'Events'] as const;
 export type GalleryPhoto = { id: string; url: string; alt: string; title: string; description: string };
 export type GalleryCollection = { id: string; title: string; category: string; summary: string; story: string; coverUrl: string; date: string; location: string; published: boolean; order: number; photos: GalleryPhoto[]; updatedAt: string };
 export class InputError extends Error {}

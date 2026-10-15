@@ -8,6 +8,7 @@ import Reviews from '@/components/reviews';
 import PortraitGallery from '@/components/portrait-gallery';
 import RecentWeddingStrip from '@/components/recent-wedding-strip';
 import WeddingVideos from '@/components/wedding-videos';
+import WeddingHighlights from '@/components/wedding-highlights';
 import Link from 'next/link';
 
 const slides = [
@@ -15,7 +16,7 @@ const slides = [
   {id:'second-wedding',title:'A wedding story',photo:{src:'/photos/c2.jpg',alt:'A wedding couple in formal attire outside a garden pavilion'}},
   {id:'third-wedding',title:'A wedding story',photo:{src:'/photos/c4.jpg',alt:'A wedding couple sharing a portrait beneath palm trees'}},
 ];
-const pages=[{href:'/',label:'Home'},{href:'/weddings',label:'Recent weddings'},{href:'/videos',label:'Films'},{href:'/giveaway',label:'Giveaway'},{href:'/contact',label:'Contact'}];
+const pages=[{href:'/',label:'Home'},{href:'/weddings',label:'Recent weddings'},{href:'/portfolio',label:'Portfolio'},{href:'/videos',label:'Films'},{href:'/giveaway',label:'Giveaway'},{href:'/contact',label:'Contact'}];
 const destination=(href:string)=>href==='/videos'?'/videos#films':href==='/contact'?'/contact#contact-form':href==='/giveaway'?'/giveaway#entry':href;
 const email = 'chapnicpictures@gmail.com';
 
@@ -146,7 +147,7 @@ export default function Portfolio({ page = 'home' }: { page?: 'home' | 'weddings
           {slides.map((slide, index) => <div key={slide.id} className={'hero-slide ' + (index === activeSlide ? 'is-active' : '')}><img src={slide.photo.src} alt="" fetchPriority={index === 0 ? 'high' : 'auto'} /></div>)}
         </div>
         <div className="hero-shade" />
-        <div className="hero-topline"><span>WEDDINGS / PHOTOGRAPHY / VIDEO / PORTRAITS</span><span>YAOUNDÉ, CAMEROON <i className="status-dot" /></span></div>
+        <div className="hero-topline"><span>WEDDING / PHOTOGRAPHY / VIDEO / PORTRAITS</span><span>YAOUNDÉ, CAMEROON <i className="status-dot" /></span></div>
         <div className="hero-copy"><h1>Weddings.<br/><em>Photography.</em><br/><span className="hero-last">Video &amp; Portraits.</span></h1><div className="hero-caption"><Link className="hero-booking-button" href="/contact#contact-form">Book a session <Arrow diagonal/></Link><Link className="hero-giveaway-button" href="/giveaway#entry">Enter the wedding giveaway <Arrow diagonal/></Link></div></div>
         <div className="hero-bottom">
           <a className="scroll-cue" href="#featured-film-title"><span>↓</span>SCROLL TO FEEL SOMETHING</a>
@@ -163,11 +164,11 @@ export default function Portfolio({ page = 'home' }: { page?: 'home' | 'weddings
 
       {page==='home'&&<section className="photographer-story section-pad" aria-labelledby="photographer-story-title"><div className="story-portrait-column" data-reveal><div className="story-section-number" aria-hidden="true">01 / THE HUMAN SIDE</div><h2 id="photographer-story-title">Hello, I&apos;m<br/><em>Chap Nic.</em></h2><p className="photographer-story-note">Candid. Fun. Artistic.</p><figure className="story-editorial-photo"><img src="/photos/nick.jpeg" alt="Chap Nic holding his camera and flash" loading="lazy"/><figcaption>CHAP NIC</figcaption></figure><Link className="text-link" href="/contact#contact-form">I would love to chat <Arrow diagonal/></Link></div><div className="photographer-story-copy" data-reveal><div className="story-chapters"><span>FONTEM</span><i aria-hidden="true">&#8594;</i><span>A KONICA CAMERA</span><i aria-hidden="true">&#8594;</i><span>CHAP NIC PICTURES</span></div><p className="story-lead">Welcome to Chap Nic Pictures, where moments become timeless memories.</p><p>My journey into photography began at Our Lady of Seven Sorrows (OLSWC) boarding school in Fontem. While pursuing a career in medicine, my passion for photography grew as I captured school dances with my late father&apos;s Konica film camera.</p><p>This passion blossomed into a professional venture specializing in candid wedding and event photography.</p><blockquote>I believe the best wedding and event photographs are candid moments—unplanned, unposed, and authentically you.</blockquote><p>I later built a team offering hybrid wedding coverage, capturing photo and video at the same time. It remains one of my most popular packages.</p><p>If you&apos;re looking for a photographer with a candid, fun, and artistic approach, I&apos;d love to chat.</p><div className="story-signoff"><span>Chap Nic</span><small>PHOTOGRAPHER &amp; STORYTELLER</small></div><div className="hybrid-note"><span>PHOTO<br/>+ VIDEO</span><p>One team. Two ways to remember.<br/>Discover hybrid wedding coverage.</p><Link href="/contact#contact-form" aria-label="Enquire about hybrid wedding coverage">&#8599;</Link></div></div></section>}
 
-      {page==='home'&&<section className="giveaway-banner section-pad"><div><p className="eyebrow">WEDDING SHOOT GIVEAWAY</p><h2 className="giveaway-offer">Enter for your chance to win <em>Wedding Photo Coverage.</em></h2></div><div><span className="giveaway-value">300k</span><Link className="pill-link" href={firstCollectionHref}>Explore the first collection &#8599;</Link></div></section>}
+      {page==='home'&&<section className="giveaway-banner section-pad"><div><p className="eyebrow">WEDDING SHOOT GIVEAWAY</p><h2 className="giveaway-offer">Enter for your chance to win <em>Wedding Photo Coverage.</em></h2></div><div><span className="giveaway-value"><small>VALUED AT</small>300k</span><Link className="pill-link" href={firstCollectionHref}>Explore the first collection &#8599;</Link></div></section>}
 
 
 
-      {page==='home'&&<section className="home-weddings section-pad" data-reveal><div className="section-heading"><div><p className="eyebrow">YOUR PEOPLE. YOUR DAY. YOUR STORY.</p><h2>Recent<br/><em>Weddings.</em></h2><p className="section-subheading">Love, in its own words.</p></div><Link className="text-link" href="/weddings">Explore recent weddings <Arrow diagonal/></Link></div><RecentWeddingStrip/></section>}
+      {page==='home'&&<section className="home-weddings section-pad" data-reveal><div className="section-heading"><div><p className="eyebrow">YOUR PEOPLE. YOUR DAY. YOUR STORY.</p><h2>Recent<br/><em>Weddings.</em></h2><p className="section-subheading">Love, in its own words.</p></div><Link className="text-link" href="/weddings">Explore recent weddings <Arrow diagonal/></Link></div><WeddingHighlights/><RecentWeddingStrip/></section>}
       {page==='home'&&<WeddingVideos/>}
 
       {page==='home'&&<Reviews/>}

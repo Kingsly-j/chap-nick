@@ -2,7 +2,7 @@ import 'server-only';
 import { getAdminFirestore } from './firebase-admin';
 import { validId, type GalleryCollection } from './collection-schema';
 
-function inPortfolio(c: GalleryCollection) { return c.category==='Weddings'||c.category==='Portraits'||c.id==='mic-monsta'; }
+function inPortfolio(c: GalleryCollection) { return c.category==='Weddings'||c.category==='Portraits'||c.category==='Events'||c.id==='mic-monsta'; }
 export const COLLECTION_PATH = 'portfolioCollections';
 export async function listCollections(includeDrafts = false): Promise<GalleryCollection[]> {
   const ref = getAdminFirestore().collection(COLLECTION_PATH);

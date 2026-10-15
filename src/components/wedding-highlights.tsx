@@ -1,0 +1,14 @@
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import type { GalleryCollection, GalleryPhoto } from '@/lib/collection-schema';
+
+export default function WeddingHighlights(){
+  const [photos,setPhotos]=useState<GalleryPhoto[]>([]);
+  const [index,setIndex]=useState(0);
+  const dialog=useRef<HTMLDialogElement>(null);
+  useEffect(()=>{const controller=new AbortController();async function load(){const results=await Promise.allSettled([fetch('/api/wedding-highlights',{signal:controller.signal,cache:'no-store'}),fetch('/api/collections',{signal:controller.signal,cache:'no-store'})]);const highlightsResult=results[0],collectionsResult=results[1];if(highlightsResult.status==='fulfilled'&&highlightsResult.value.ok){const highlights=await highlightsResult.value.json();if(highlights.configured){setPhotos(highlights.photos);return;}}if(collectionsResult.status==='fulfilled'&&collectionsResult.value.ok){const data=await collectionsResult.value.json();const weddingCollections=(data.collections as GalleryCollection[]).filter(collection=>collection.category==='Weddings').sort((a,b)=>(b.date||'').localeCompare(a.date||'')||a.order-b.order);setPhotos(weddingCollections.flatMap(collection=>collection.photos.map(photo=>({...photo,title:photo.title||collection.title}))).slice(0,30));}}void load().catch(()=>{});return()=>controller.abort();},[]);
+  function step(direction:number){setIndex(value=>(value+direction+photos.length)%photos.length);}
+  if(!photos.length)return null;
+  const current=photos[index];
+  return <section className="wedding-highlights" aria-labelledby="wedding-highlights-title"><header><div><p className="eyebrow">A LOOK INSIDE OUR WEDDINGS</p><h2 id="wedding-highlights-title">Wedding <em>moments.</em></h2></div><span>{photos.length} PHOTOS</span></header><div className="wedding-highlight-track" aria-label="Wedding photo highlights">{photos.map((photo,i)=><button type="button" key={photo.id} onClick={()=>{setIndex(i);dialog.current?.showModal();}} aria-label={'Expand wedding highlight '+(i+1)}><img src={photo.url} alt={photo.alt} loading="lazy"/>{photo.title&&<span>{photo.title}</span>}</button>)}</div><dialog className="highlight-viewer" ref={dialog} aria-label="Wedding highlights viewer" onKeyDown={event=>{if(event.key==='ArrowRight'){event.preventDefault();step(1);}if(event.key==='ArrowLeft'){event.preventDefault();step(-1);}}}><header><span>{current?.title||'Wedding moments'}</span><button type="button" onClick={()=>dialog.current?.close()}>Close &#215;</button></header><div className="highlight-viewer-photo"><button type="button" onClick={()=>step(-1)} aria-label="Previous wedding photo">&#8592;</button>{current&&<img src={current.url} alt={current.alt}/>}<button type="button" onClick={()=>step(1)} aria-label="Next wedding photo">&#8594;</button></div><p aria-live="polite">{index+1} / {photos.length}</p></dialog></section>;
+}
