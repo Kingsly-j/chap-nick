@@ -6,3 +6,5 @@
 .giveaway-banner .giveaway-value{font:clamp(4rem,8vw,8rem)/1 Georgia,serif;display:block;white-space:normal}
 
 .giveaway-banner .giveaway-value small{display:block;font:16px/1.5 Arial,sans-serif;letter-spacing:.12em;font-style:normal;color:#25341f}
+
+.giveaway-banner .giveaway-value small{font-weight:700}
